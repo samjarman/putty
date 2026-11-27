@@ -1,6 +1,6 @@
 # Putty
 
-Putty is a small static mini golf scorecard app for a course exercise. It uses plain HTML, CSS, and JavaScript with no build step.
+Putty is a sample project to accompany the [Become AI Native course](https://becomeainative.dev/). It's a small static mini golf scorecard. It uses plain HTML, CSS, and JavaScript with no build step.
 
 ## Run it
 
