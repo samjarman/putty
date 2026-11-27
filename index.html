@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Putty</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel setup-panel" id="setupPanel" aria-labelledby="setupTitle">
+        <div class="brand-row">
+          <div class="golf-mark" aria-hidden="true">18</div>
+          <div>
+            <p class="eyebrow">Mini golf scorecard</p>
+            <h1 id="setupTitle">Putty</h1>
+          </div>
+        </div>
+
+        <form id="setupForm" class="setup-form">
+          <fieldset>
+            <legend>Round length</legend>
+            <div class="segmented-control" role="radiogroup" aria-label="Choose round length">
+              <label>
+                <input type="radio" name="holeCount" value="9" checked>
+                <span>9 holes</span>
+              </label>
+              <label>
+                <input type="radio" name="holeCount" value="18">
+                <span>18 holes</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Players</legend>
+            <div class="player-list" id="playerList">
+              <label>
+                <span>Player 1</span>
+                <input type="text" name="player" value="Player 1" autocomplete="off">
+              </label>
+              <label>
+                <span>Player 2</span>
+                <input type="text" name="player" value="Player 2" autocomplete="off">
+              </label>
+            </div>
+            <div class="button-row">
+              <button type="button" class="secondary-button" id="addPlayerButton">Add Player</button>
+              <button type="button" class="secondary-button" id="removePlayerButton">Remove Player</button>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="primary-button">Start Putty</button>
+        </form>
+      </section>
+
+      <section class="scorecard-panel hidden" id="scorecardPanel" aria-labelledby="scorecardTitle">
+        <header class="scorecard-header">
+          <div>
+            <p class="eyebrow">Active round</p>
+            <h1 id="scorecardTitle">Putty</h1>
+          </div>
+          <div class="header-actions">
+            <button type="button" class="secondary-button" id="editSetupButton">Edit Setup</button>
+            <button type="button" class="secondary-button danger" id="clearScoresButton">Clear Scores</button>
+          </div>
+        </header>
+
+        <div class="round-summary" id="roundSummary" aria-live="polite"></div>
+
+        <div class="table-wrap" tabindex="0" aria-label="Scrollable scorecard table">
+          <table class="scorecard-table" id="scorecardTable">
+            <thead id="scorecardHead"></thead>
+            <tbody id="scorecardBody"></tbody>
+            <tfoot id="scorecardFoot"></tfoot>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
